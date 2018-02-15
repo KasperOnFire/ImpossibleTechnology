@@ -13,4 +13,5 @@
 
 ### Questions
 1. What is the median profession?
-2. 
+2. What country is the norm?
+3. 

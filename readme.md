@@ -3,6 +3,7 @@
 
 ### Dataset #1
 [StackOverflow yearly survey](https://www.kaggle.com/stackoverflow/so-survey-2017/data)
+Also avaible in Datasets folder in current repository, as of 15/2/2018.
 
 ### Questions
 1. What is the median profession?
@@ -13,6 +14,7 @@
 
 ### Dataset #2
 [55000+ Song lyrics](https://www.kaggle.com/mousehead/songlyrics/data)
+Also avaible in Datasets folder in current repository, as of 15/2/2018.
 
 ### Questions
 1. What is the most used words in the songs?

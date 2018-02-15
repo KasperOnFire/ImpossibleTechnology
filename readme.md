@@ -16,8 +16,7 @@
 
 ### Questions
 1. What is the median profession?
-2. What country is the norm?
-3. How many % of people from each country?
-4. what language do most developers work in?
-5. what is the most popular IDE?
-6. What framework do most developers want to work in?
+2. How many % of people from each country?
+3. what language do most developers work in?
+4. what is the most popular IDE?
+5. What framework do most developers want to work in?

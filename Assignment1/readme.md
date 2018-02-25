@@ -18,8 +18,8 @@ Clone this project, and `python Assignment1/run.py` to run the project.
 
 ### Images
 
-[Image 1](pics/Question_1.png)
-[Image 2](pics/Question_2.png)
+![Image 1](pics/Question_1.png)
+![Image 2](pics/Question_2.png)
 
 ### Questions
 

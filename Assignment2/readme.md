@@ -26,6 +26,9 @@ Image 1
 Image 2
 ![Image 2](pics/Question_2.png)
 
+Image 3
+![Image 3](pics/Question_4.png)
+
 ### Questions
 
 1. Has the crime decreased or increased over the last 20 years?
@@ -37,7 +40,7 @@ Image 2
 ### Answers
 
 1. As seen in image 1, the crime has generally decreased over the last 20 years.
-2. Motor Vehicle Theft has gone down. Otherwise, every type of crime seem to correspond percentwise over all the years, meaning that the types of crime has not changed very much, but that the general number of crimes has gone significantly down.
+2. 
 3. We were informed, that this was to be answered with datasheet #2. But since that sheet only contains data about one year, there is no real answer to be found here. We needed a data source that has both timewise data and locationwise data.
 4. asd
 5. 1994 had the most crime, as seen in image 2. The most normal crime was theft.

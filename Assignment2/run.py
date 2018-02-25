@@ -90,6 +90,7 @@ def listofState():
     return states
 
 def question4():
+    crimes = ['Violent', 'Property']
     states = listofState()
     citizenPerState = infoCollection(2)
     violent_type = infoCollection(3)
@@ -101,10 +102,25 @@ def question4():
     for state in states:
         vperthousand.append((violent_type[state] / citizenPerState[state]) * 1000)
         pperthousand.append((property_type[state] / citizenPerState[state]) * 1000)
-    print(vperthousand)
-    print(pperthousand)
 
     plt.figure("Question 4")
+    plt.title('Crime', fontsize=14)
+    plt.ylabel('Crime per 1000 citizen', fontsize=12)
+    plt.xlabel('State', fontsize=12)
+
+    N = len(states)
+    
+    ind = np.arange(N)
+    width = 0.35
+
+    plt.bar(ind,pperthousand,width,label='Property')
+    plt.bar(ind + width,vperthousand,width,label='Property')
+    
+    plt.xticks(ind + width / 2, states)
+    plt.xticks(rotation=90)
+
+
+    plt.grid(True)
 
 # Using functions give a bit more of an overview and disable the ones you are not working on
 question1()

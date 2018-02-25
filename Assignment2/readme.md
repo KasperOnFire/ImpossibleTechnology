@@ -1,4 +1,4 @@
-# Impossible Technology - Python group
+# Impossible Technology
 ## David Martin Carl, Tjalfe Jon Klarskov Møller, Anton Kornholt & Kasper Ravn Breindal
 
 ### Dataset
@@ -14,11 +14,14 @@ import matplotlib
 import numpy
 ```
 
-Clone this project, and `python Assignment1/run.py` to run the project.
+Clone this project, and `python Assignment2/run.py` to run the project.
 
 ### Images
 
+Image 1
 ![Image 1](pics/Question_1.png)
+
+Image 2
 ![Image 2](pics/Question_2.png)
 
 ### Questions
@@ -31,4 +34,8 @@ Clone this project, and `python Assignment1/run.py` to run the project.
 
 ### Answers
 
-1. 
+1. As seen in image 1, the crime has generally decreased over the last 20 years.
+2. asd
+3. We were informed, that this was to be answered with datasheet #2. But since that sheet only contains data about one year, there is no real answer to be found here. We needed a data source that has both timewise data and locationwise data.
+4. asd
+5. 1994 had the most crime, as seen in image 2. The most normal crime was theft.

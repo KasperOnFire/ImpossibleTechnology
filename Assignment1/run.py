@@ -11,9 +11,10 @@ wb1 = xlrd.open_workbook(file_names[0]).sheet_by_index(0)
 wb2 = xlrd.open_workbook(file_names[1]).sheet_by_index(0)
 
 def question1():
-                                                                # Two different ways to get the years ou tif it wasn't for the bad data in the xls
-    # years = [wb1.cell(el + 4, 0).value for el in range(20)]
-    # y = wb1.col(0)[4:23]
+    # Two different ways to get the years ou tif it wasn't for the bad data in the xls
+        # years = [wb1.cell(el + 4, 0).value for el in range(20)]
+        # y = wb1.col(0)[4:23]
+    
     years = [year for year in range(1994, 2014)]
     total_crime = [
         wb1.cell(row, 2).value + wb1.cell(row, 12).value 
@@ -39,13 +40,26 @@ def question2():
     for col in range(3, 20):                                    # Getting the data for the different crimes
         crimes.append([wb1.cell(row, col).value for row in range(4, 24)]) 
 
+    # Removing unwanted data
+    crime_types = crime_types[1::2]
+    crimes = crimes[1::2]
+    crime_types = crime_types[:-4] + crime_types[-3:]
+    crimes = crimes[:-4] + crimes[-3:]
+
     plt.figure("Question 2")                                    # Naming a new figure/window to give the graph a new window
     
     bars = []                                                   # keeping reference to asosiate info later in plt.legend
-    for crime in crimes[1::2]:                                  # Insert every 2nd into the figure (don't need both numbers and rate)
-        bars.append(plt.bar(years, crime))  # !!!!!! maybe rate is better to normalize due to an increase in population and should have ar bottom= to show the crime as an accumilated bar
     
-    plt.legend((bar[0] for bar in bars), (crime_types))         # Placing the info about what color represent which crime
+    for i in range(len(crimes)):
+        if(i is 0):
+            bars.append(plt.bar(years, crimes[i]))
+            accum_sum = np.array(crimes[i])
+        else:  
+            bars.append(plt.bar(years, crimes[i], bottom=accum_sum))  
+            accum_sum = np.array(accum_sum + np.array(crimes[i]))
+            
+    plt.legend((bar[0] for bar in bars), crime_types)         # Placing the info about what color represent which crime
+    
     plt.title('Crime', fontsize=14)
     plt.xlabel('Year', fontsize=12)
     plt.ylabel('Amount', fontsize=12)
@@ -53,8 +67,6 @@ def question2():
     plt.xticks(np.arange(min(years), max(years) + 1, 1.0))
     plt.xticks(rotation=90)
     
-
-
 
 
 # Using functions give a bit more of an overview and disable the ones you are not working on

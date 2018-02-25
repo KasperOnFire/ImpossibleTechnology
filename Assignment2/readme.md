@@ -29,6 +29,7 @@ Image 2
 Image 3
 ![Image 3](pics/Question_4_2.png)
 
+(Orange is violent type, blue is property type)
 ### Questions
 
 1. Has the crime decreased or increased over the last 20 years?

@@ -27,7 +27,7 @@ Image 2
 ![Image 2](pics/Question_2.png)
 
 Image 3
-![Image 3](pics/Question_4.png)
+![Image 3](pics/Question_4_2.png)
 
 ### Questions
 

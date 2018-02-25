@@ -93,7 +93,7 @@ def question4():
     plt.figure("Question 4")
 
 # Using functions give a bit more of an overview and disable the ones you are not working on
-#question1()
-#question2()
+question1()
+question2()
 question4()
 plt.show()

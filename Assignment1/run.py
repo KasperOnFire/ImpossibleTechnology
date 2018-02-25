@@ -11,7 +11,7 @@ wb1 = xlrd.open_workbook(file_names[0]).sheet_by_index(0)
 wb2 = xlrd.open_workbook(file_names[1]).sheet_by_index(0)
 
 def question1():
-                                                                # Two different ways to get the years ou tif it wasn't for the bad data in the xls
+    # Two different ways to get the years ou tif it wasn't for the bad data in the xls
     # years = [wb1.cell(el + 4, 0).value for el in range(20)]
     # y = wb1.col(0)[4:23]
     years = [year for year in range(1994, 2014)]
@@ -52,12 +52,48 @@ def question2():
     plt.grid(True)
     plt.xticks(np.arange(min(years), max(years) + 1, 1.0))
     plt.xticks(rotation=90)
+
+def infoCollection(column):
+    last_State = ''
+    numberPerState = {}
+    for i in range(4, 9296):
+        if wb2.cell(i, 0).value != "":
+            last_State = wb2.cell(i,0).value
+            numberPerState[last_State] = 0
+        if wb2.cell(i, column).value == "":
+            numberPerState[last_State] = numberPerState[last_State] + 0
+        else:
+            numberPerState[last_State] =+ numberPerState[last_State] + int(wb2.cell(i, column).value)
+
+    return numberPerState
+
+def listofState():
+    states = []
+    for i in range(4, 9296):
+        if wb2.cell(i, 0).value != "":
+            states.append(wb2.cell(i, 0).value)
     
+    return states
 
+def question4():
+    states = listofState()
+    citizenPerState = infoCollection(2)
+    violent_type = infoCollection(3)
+    property_type = infoCollection(9)
 
+    vperthousand = [] #violent type per thousand
+    pperthousand = [] #property type per thousand
 
+    for state in states:
+        vperthousand.append((violent_type[state] / citizenPerState[state]) * 1000)
+        pperthousand.append((property_type[state] / citizenPerState[state]) * 1000)
+    print(vperthousand)
+    print(pperthousand)
+
+    plt.figure("Question 4")
 
 # Using functions give a bit more of an overview and disable the ones you are not working on
-question1()
-question2()
+#question1()
+#question2()
+question4()
 plt.show()

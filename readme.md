@@ -6,7 +6,7 @@
 Also avaible in Datasets folder in current repository, as of 15/2/2018.
 
 ### Questions
-1. What is the most normal profession?
+1. What is the most occuring profession? ("mode" in statistical terms)
 2. What is the distribution of developers in % for each country?
 3. What language do most developers work in?
 4. what is the most popular IDE?

@@ -4,8 +4,8 @@ import pandas as pd
 
 file_name = "KoreanConflict.csv"
 KoreanConflict = pd.read_csv(file_name)
-# repalce all empty values with an empty string to help np.unique not crash
-KoreanConflict = KoreanConflict.replace(np.nan,'',regex=True)
+# replace all empty values with an empty string to help np.unique not throw TypeError
+KoreanConflict = KoreanConflict.replace(np.nan, '', regex=True)
 kc = KoreanConflict.as_matrix()
 
 
@@ -24,8 +24,9 @@ def question1():
 
 
 def question2():
+    #return the unique enrollments, and the number of occurences of each.
     enrollment, count = np.unique(kc[:, 2], return_counts=True)
-    # and plot it!
+    # plot it!
     plt.figure("Question 2")
     plt.title("Which enrollment was the most common?", fontSize=12)
     plt.xlabel("Enrollment", fontSize=12)
@@ -37,13 +38,13 @@ def question2():
 
 def question3():
     ethnicity, count = np.unique(kc[:, 15], return_counts=True)
-    # Clean up data to make it more readable
+    # editing text, removing unessesary long text, to make plot easier to read.
     for i in range(len(ethnicity)):
-        temp = ethnicity[i] 
-        temp = temp.split('(')[0] 
-        temp = temp.split('/')[0] 
-        temp = temp.split('OR')[0] 
-        temp = temp.replace(' ','\n')
+        temp = ethnicity[i]
+        temp = temp.split('(')[0]
+        temp = temp.split('/')[0]
+        temp = temp.split('OR')[0]
+        temp = temp.replace(' ', '\n')
         ethnicity[i] = temp
     # and plot it!
     plt.figure("Question 3")
@@ -57,30 +58,30 @@ def question3():
 
 
 def question4():
+    #Count the number of casualties per division
     division, count = np.unique(kc[:, 18], return_counts=True)
-    
     # Limit the amount of divisions shown because 1799 is too many to show
     limit = 20
     # Sort divisions based on count (-count used to reverse so it's descend)
     division = division[np.argsort(-count)][:limit]
     count = np.sort(count)[::-1][:limit]
 
-    division[0] = 'NaN'
-
     # and plot it!
     plt.figure("Question 4")
     plt.title("Which division had the most casualties?", fontSize=12)
     plt.xlabel("Division", fontSize=12)
     plt.ylabel("Losses", fontSize=12)
-    plt.bar(division, count)
+    plt.bar(division[1:], count[1:])
     plt.xticks(rotation=90)
-    for a, b in zip(division, count):
+    for a, b in zip(division[1:], count[1:]):
         plt.text(a, b, str(b), horizontalAlignment="center")
 
 
 def question5():
+    # mask the array, as to only get the soldiers from the US
     mask = (kc[:, 11] == "US")
     us_soldiers = kc[mask]
+    # count occurrences
     state, count = np.unique(us_soldiers[:, 13], return_counts=True)
     # and plot it!
     plt.figure("Question 5")

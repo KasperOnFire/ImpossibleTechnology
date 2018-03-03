@@ -4,7 +4,7 @@
 
 ### Dataset
 
-[KoreanConflict or How to use numpy.unique](https://github.com/PatrickFenger/pythonAssignments)
+[KoreanConflict](https://github.com/PatrickFenger/pythonAssignments) or How to use numpy.unique
 
 ### Dependencies & how to run
 

@@ -83,10 +83,10 @@ def question5():
 
 
 # run every highorder function
-# question1()
-# question2()
+question1()
+question2()
 question3()
-# question4()
-# question5()
+question4()
+question5()
 
 plt.show()

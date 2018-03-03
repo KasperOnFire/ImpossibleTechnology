@@ -69,14 +69,14 @@ def question4():
 
 
 def question5():
-    mask = (kc[:, 14] == "US")
+    mask = (kc[:, 11] == "US")
     us_soldiers = kc[mask]
-    state, count = np.unique(us_soldiers[:, 16], return_counts=True)
-
+    state, count = np.unique(us_soldiers[:, 13], return_counts=True)
     plt.figure("Question 5")
     plt.title("Which Home state suffered the most losses?", fontSize=12)
     plt.xlabel("State", fontSize=12)
     plt.ylabel("Losses", fontSize=12)
+    plt.xticks(rotation=90)
     plt.bar(state, count)
     for a, b in zip(state, count):
         plt.text(a, b, str(b), horizontalAlignment="center")

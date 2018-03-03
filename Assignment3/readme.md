@@ -31,7 +31,7 @@ Image 3
 ![image 3](img/Question_3.png)
 
 Image 4
-![image 4](img/Question_4.png)
+![image 4](img/Question_4_new.png)
 
 Image 5
 ![Image 5](img/Question_5.png)

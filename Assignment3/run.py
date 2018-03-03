@@ -38,6 +38,13 @@ def question2():
 def question3():
     # fuckin errors, i DUNNO
     ethnicity, count = np.unique(kc[:, 15], return_counts=True)
+    for i in range(len(ethnicity)):
+        temp = ethnicity[i] 
+        temp = temp.split('(')[0] 
+        temp = temp.split('/')[0] 
+        temp = temp.split('OR')[0] 
+        temp = temp.replace(' ','\n')
+        ethnicity[i] = temp
     # and plot it!
     plt.figure("Question 3")
     plt.title(
@@ -76,10 +83,10 @@ def question5():
 
 
 # run every highorder function
-question1()
-question2()
+# question1()
+# question2()
 question3()
-question4()
-question5()
+# question4()
+# question5()
 
 plt.show()

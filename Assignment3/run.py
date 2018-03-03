@@ -21,6 +21,7 @@ def question1():
         plt.text(a, b, str(b), horizontalAlignment="center")
 
 
+#comments
 def question2():
     enrollment, count = np.unique(kc[:, 2], return_counts=True)
     # and plot it!

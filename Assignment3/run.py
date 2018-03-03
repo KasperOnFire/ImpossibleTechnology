@@ -4,6 +4,7 @@ import pandas as pd
 
 file_name = "KoreanConflict.csv"
 KoreanConflict = pd.read_csv(file_name)
+KoreanConflict = KoreanConflict.replace(np.nan,'',regex=True)
 kc = KoreanConflict.as_matrix()
 
 

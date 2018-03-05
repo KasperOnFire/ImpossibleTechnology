@@ -47,7 +47,7 @@ Image 5
 
 ### Answers
 
-1. 29856 soldiers from the marine coprs entered the conflict, see image 1.
+1. 4509 soldiers from the marine coprs entered the conflict, see image 1.
 2. Active - regular, see image 2.
 3. Yes, there was a majority. White was the most prevalent ethnicity. See image 3.
 4. the 38th infantry 2nd division lost the most people. See image 4.

@@ -17,9 +17,12 @@ import numpy
 ```
 
 Clone from git repository and run the project from command promt with the command line:
+
 python run.py
+
 Or by opening the run file in your chosen environment and running the file.
-Or run.py file contains a webget that downloads the dataset upon running the file. 
+
+Our run.py file contains a webget that downloads the dataset upon running the file. 
 
 ### Images
 

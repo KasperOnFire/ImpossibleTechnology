@@ -2,13 +2,42 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import webget as wg
+from collections import OrderedDict
+import operator #used to sort our dictonary!
 
 file_link = "https://www.kaggle.com/kevinmh/fifa-18-more-complete-player-dataset/downloads/complete.csv/5"
-file_name = "fifaplayers.csv"
-#wg.download(file_link, "fifatest.csv")
-FifaPlayers = pd.read_csv(file_name)
-fp = FifaPlayers.as_matrix()
+file_name = "complete.csv"
+#file_name = "fifaplayers.csv"
+#wg.download(file_link, "fifaplayers.csv")
+#FifaPlayers = pd.read_csv(file_name)
+#fp = FifaPlayers.as_matrix()
 
+def question1DicBuilder(club_list, value_list):
+    clubsDict = {}
+    index = 0
+    for i in club_list:
+        if i in clubsDict:
+            clubsDict[i] = clubsDict[i] + value_list[index]
+            index = index + 1
+        else:
+            clubsDict[i] = value_list[index]
+            index = index + 1
+    return clubsDict
+
+def question1():
+    df = pd.read_csv(file_name)
+    
+    clubs = df.club
+    player_value = df.eur_value
+
+    result = question1DicBuilder(clubs, player_value)
+    result = OrderedDict(sorted(result.items(), key=operator.itemgetter(1)))
+    result_list = list(result.keys())
+    
+    print('3 most expensive clubs: ', result_list[-3:])
+    print('3 cheapest clubs: ', result_list[1:4])
+
+    
 
 def question2():
     #get nationalities and count of each
@@ -56,7 +85,8 @@ def question3():
         plt.text(a, b, str(b), horizontalAlignment="center")
 
 
-question2()
-question3()
+question1()
+#question2()
+#question3()
 
 plt.show()

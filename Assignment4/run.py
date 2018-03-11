@@ -61,10 +61,18 @@ def question2():
     print("England is the most common nationality. See graph for an overview.")
 
 def question3():
-    players = []
-    diff = []
-    limit = 20
-    for player in fp:
+    '''players = []
+    diff = []'''
+    limit = 10
+    most_valued_players = FifaPlayers.nlargest(limit, "eur_value")
+    clause_release_difference = most_valued_players["eur_release_clause"] - most_valued_players["eur_value"] 
+    
+    answer = most_valued_players["name"] + "    " + clause_release_difference.map(str)
+    print("Question 3")
+    print("What is the difference of the release clause and value of the 10 most valueable players?")
+    print(answer)
+    
+    '''for player in fp:
         players.append(player[1])
         diff.append(player[18] - player[17])
 
@@ -73,7 +81,7 @@ def question3():
 
     plt.figure("Question 3")
     plt.title(
-        "What is the difference of the release clause and value of all players?"
+        "What is the difference of the release clause and value 10 most valueable players?"
     )
     plt.xlabel("Player", fontSize=8)
     plt.ylabel("Difference", fontSize=12)
@@ -81,8 +89,7 @@ def question3():
     plt.xticks(rotation=70)
     plt.tight_layout()
     for a, b in zip(players, diff):
-        plt.text(a, b, str(b), horizontalAlignment="center")
-    print("Question 3")
+        plt.text(a, b, str(b), horizontalAlignment="center")'''
 
 def question4():
     #Making sure we don't use scientific values for more understandable/readable result
@@ -143,7 +150,7 @@ def question5():
 
 question1()
 question2()
-#question3()
+question3()
 question4()
 question5()
 plt.show()

@@ -49,25 +49,25 @@ Question 5: How big is the average difference between value and wage of the play
 
 3. The difference between release clause and value of the 10 most valueable players.
 
-Neymar:       113,800,000.0 EUR.
+* Neymar:       113,800,000.0 EUR.
 
-L. Messi:     110,300,000.0 EUR.
+* L. Messi:     110,300,000.0 EUR.
 
-L. Suarez:    101,900,000.0 EUR.
+* L. Suarez:    101,900,000.0 EUR.
 
-Cristiano:    100,300,000.0 EUR.
+* Cristiano:    100,300,000.0 EUR.
 
-R. Lewand:    59,800,000.0 EUR.
+* R. Lewand:    59,800,000.0 EUR.
 
-E. Hazard:    83,700,000.0 EUR.
+* E. Hazard:    83,700,000.0 EUR.
 
-K. De Bru:    76,800,000.0 EUR.
+* K. De Bru:    76,800,000.0 EUR.
 
-T. Kroos:     83,000,000.0 EUR.
+* T. Kroos:     83,000,000.0 EUR.
 
-P. Dybala:    57,300,000.0 EUR.
+* P. Dybala:    57,300,000.0 EUR.
 
-G. Higuan:    50,100,000.0 EUR.
+* G. Higuan:    50,100,000.0 EUR.
 
 4. See the graphs for an overview of the frequences of the different player data.
 

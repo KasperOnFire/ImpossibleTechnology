@@ -42,18 +42,33 @@ Question 5: How big is the average difference between value and wage of the play
 ### Answers
 
 1. 3 Most expensive teams are: FC Barcelona', 'FC Bayern Munich', 'Real Madrid CF'.
+
 3 cheapest teams are: 'Bray Wanderers', 'Limerick FC', 'Drogheda United'.
+
 2. England is the most common nationality. See graph for an overview.
+
 3. The difference between release clause and value of the 10 most valueable players.
+
 Neymar:       113800000.0 EUR.
+
 L. Messi:     110300000.0 EUR.
+
 L. Suarez:    101900000.0 EUR.
+
 Cristiano:    100300000.0 EUR.
+
 R. Lewand:    59800000.0 EUR.
+
 E. Hazard:    83700000.0 EUR.
+
 K. De Bru:    76800000.0 EUR.
+
 T. Kroos:     83000000.0 EUR.
+
 P. Dybala:    57300000.0 EUR.
+
 G. Higuan:    50100000.0 EUR.
+
 4. See the graphs for an overview of the frequences of the different player data.
+
 5. The average difference between player wages and values are: 2359007 EUR

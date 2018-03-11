@@ -26,6 +26,15 @@ Our run.py file contains a webget that downloads the dataset upon running the fi
 
 ### Images
 
+Question 2
+![Question 2](img/Question_2.png)
+
+Question 3
+![Question 3: Age](img/Age_Frequence.png)
+
+![Question 3: Height](img/Height_Frequence.png)
+
+![Question 3: Weight](img/Weight_Frequence.png)
 
 ### Questions
 
@@ -51,7 +60,7 @@ Question 5: How big is the average difference between value and wage of the play
 * Limerick FC
 * Drogheda United
 
-2. England is the most common nationality. See graph for an overview.
+2. England is the most common nationality. See image "question 2" for overview.
 
 3. The difference between release clause and value of the 10 most valueable players.
 
@@ -75,6 +84,6 @@ Question 5: How big is the average difference between value and wage of the play
 
 * G. Higuan:    50,100,000.0 EUR.
 
-4. See the graphs for an overview of the frequences of the different player data.
+4. See the images in section "question 3" for an overview of the frequencies.
 
 5. The average difference between player wages and values are: 2359007 EUR

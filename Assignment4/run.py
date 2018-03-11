@@ -4,7 +4,6 @@ import pandas as pd
 import webget as wg
 from collections import OrderedDict
 import operator #used to sort our dictonary!
-from tabulate import tabulate
 
 file_link = "https://raw.githubusercontent.com/INFINITE-KH/Python-Dataset/master/complete.csv"
 file_name = "fifaplayers.csv"
@@ -33,8 +32,6 @@ def question1():
     print("Question 1")
     print('3 most expensive clubs: ', result_list[-3:])
     print('3 cheapest clubs: ', result_list[1:4])
-
-    
 
 def question2():
     #get nationalities and count of each
@@ -126,7 +123,7 @@ def question5():
     player_count = fp.shape[0]
     #Rounding down the sum of the differences/number of players
     print("Question 5")
-    print("The average difference between player wages and value:", str(round(FifaPlayers["difference"].sum()/player_count)), "EUR")
+    print("The average difference between player wages and values are:", str(round(FifaPlayers["difference"].sum()/player_count)), "EUR")
 
 
 question1()
@@ -137,7 +134,7 @@ question5()
 plt.show()
 
     
-#outcommented from question3
+#outcommented from question3 - not part of answer
 '''for player in fp:
         players.append(player[1])
         diff.append(player[18] - player[17])

@@ -41,9 +41,15 @@ Question 5: How big is the average difference between value and wage of the play
 
 ### Answers
 
-1. 3 Most expensive teams are: 'FC Barcelona', 'FC Bayern Munich', 'Real Madrid CF'.
+1. 3 Most expensive teams are: 
+* FC Barcelona
+* FC Bayern Munich
+* Real Madrid CF
 
-3 cheapest teams are: 'Bray Wanderers', 'Limerick FC', 'Drogheda United'.
+3 cheapest teams are: 
+* Bray Wanderers
+* Limerick FC
+* Drogheda United
 
 2. England is the most common nationality. See graph for an overview.
 

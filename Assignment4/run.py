@@ -6,10 +6,9 @@ from collections import OrderedDict
 import operator #used to sort our dictonary!
 from tabulate import tabulate
 
-file_link = "https://www.kaggle.com/kevinmh/fifa-18-more-complete-player-dataset/downloads/complete.csv/5"
-file_name = "complete.csv"
-#file_name = "fifaplayers.csv"
-#wg.download(file_link, "fifaplayers.csv")
+file_link = "https://raw.githubusercontent.com/INFINITE-KH/Python-Dataset/master/complete.csv"
+file_name = "fifaplayers.csv"
+wg.download(file_link, file_name)
 FifaPlayers = pd.read_csv(file_name)
 fp = FifaPlayers.as_matrix()
 

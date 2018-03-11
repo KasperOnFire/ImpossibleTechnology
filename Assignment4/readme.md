@@ -29,12 +29,12 @@ Our run.py file contains a webget that downloads the dataset upon running the fi
 Question 2
 ![Question 2](img/Question_2.png)
 
-Question 3
-![Question 3: Age](img/Age_Frequence.png)
+Question 4
+![Question 4: Age](img/Age_Frequence.png)
 
-![Question 3: Height](img/Height_Frequence.png)
+![Question 4: Height](img/Height_Frequence.png)
 
-![Question 3: Weight](img/Weight_Frequence.png)
+![Question 4: Weight](img/Weight_Frequence.png)
 
 ### Questions
 

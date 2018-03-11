@@ -84,6 +84,6 @@ Question 5: How big is the average difference between value and wage of the play
 
 * G. Higuan:    50,100,000.0 EUR.
 
-4. See the images in section "question 3" for an overview of the frequencies.
+4. See the images in section "question 4" for an overview of the frequencies.
 
 5. The average difference between player wages and values are: 2359007 EUR

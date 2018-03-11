@@ -120,13 +120,16 @@ def question4():
 
 
 
-
-
 def question5():
-    print("question5")
+    
+    FifaPlayers["difference"] = FifaPlayers["eur_value"] - FifaPlayers["eur_wage"]
+    player_count = fp.shape[0]
+    print("The average difference between player wages and value:", str(round(FifaPlayers["difference"].sum()/player_count)), "EUR")
+
 
 question1()
 #question2()
 #question3()
 question4()
+question5()
 plt.show()

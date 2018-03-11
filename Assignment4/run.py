@@ -9,8 +9,8 @@ file_link = "https://www.kaggle.com/kevinmh/fifa-18-more-complete-player-dataset
 file_name = "complete.csv"
 #file_name = "fifaplayers.csv"
 #wg.download(file_link, "fifaplayers.csv")
-#FifaPlayers = pd.read_csv(file_name)
-#fp = FifaPlayers.as_matrix()
+FifaPlayers = pd.read_csv(file_name)
+fp = FifaPlayers.as_matrix()
 
 def question1DicBuilder(club_list, value_list):
     clubsDict = {}
@@ -84,9 +84,49 @@ def question3():
     for a, b in zip(players, diff):
         plt.text(a, b, str(b), horizontalAlignment="center")
 
+def question4():
+    np.set_printoptions(suppress=True)
+    player_ages, age_count = np.unique(fp[:, 6], return_counts = True)
+    player_heights_cm, height_count = np.unique(fp[:, 9], return_counts = True)
+    player_weights_kg, weight_count = np.unique(fp[:, 10], return_counts = True)
+    player_count = fp.shape[0]
+    age_frequence = np.around((age_count/player_count)*100, 3)
+    height_frequence = np.around((height_count/player_count)*100, 3)
+    weight_frequence = np.around((weight_count/player_count)*100, 3)
+
+    title = "Age Frequence"
+    plt.bar(player_ages, age_frequence, width=0.4, linewidth = 0, align = 'center')
+    plt.title(title, fontsize = 18)
+    plt.xticks(player_ages, player_ages)
+    plt.xlabel("Age")
+    plt.ylabel("%", fontsize = 18)
+    plt.show()
+
+    title = "Height Frequence"
+    plt.bar(player_heights_cm, height_frequence, width=0.4, linewidth = 0, align = 'center')
+    plt.title(title, fontsize = 18)
+    plt.xticks(player_heights_cm, player_heights_cm, rotation="vertical")
+    plt.xlabel("Height (cm)")
+    plt.ylabel("%", fontsize = 18)
+    plt.show()
+
+    title = "Weight Frequence"
+    plt.bar(player_weights_kg, weight_frequence, width=0.4, linewidth = 0, align = 'center')
+    plt.title(title, fontsize = 18)
+    plt.xticks(player_weights_kg, player_weights_kg, rotation="vertical")
+    plt.xlabel("Weight (kg)")
+    plt.ylabel("%", fontsize = 18)
+    plt.show()
+
+
+
+
+
+def question5():
+    print("question5")
 
 question1()
 #question2()
 #question3()
-
+question4()
 plt.show()

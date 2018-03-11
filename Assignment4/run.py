@@ -12,7 +12,7 @@ file_name = "complete.csv"
 FifaPlayers = pd.read_csv(file_name)
 fp = FifaPlayers.as_matrix()
 
-def question1DicBuilder(club_list, value_list):
+def question1_dict_builder(club_list, value_list):
     clubsDict = {}
     index = 0
     for i in club_list:
@@ -26,11 +26,8 @@ def question1DicBuilder(club_list, value_list):
 
 def question1():
     df = pd.read_csv(file_name)
-    
-    clubs = df.club
-    player_value = df.eur_value
 
-    result = question1DicBuilder(clubs, player_value)
+    result = question1_dict_builder(df.club, df.eur_value)
     result = OrderedDict(sorted(result.items(), key=operator.itemgetter(1)))
     result_list = list(result.keys())
     
@@ -42,13 +39,13 @@ def question1():
 def question2():
     #get nationalities and count of each
     nationalities, count = np.unique(fp[:, 14], return_counts=True)
+    
     #get only top 15
     limit = 15
-
     #sort both lists, in descending order for highest first
     nationalities = nationalities[np.argsort(-count)][:limit]
     count = np.sort(count)[::-1][:limit]
-
+    
     #plot it
     plt.figure("Question 2")
     plt.title("Which nationality is the most common amongst all players?")
@@ -59,7 +56,7 @@ def question2():
     plt.tight_layout()
     for a, b in zip(nationalities, count):
         plt.text(a, b, str(b), horizontalAlignment="center")
-
+    plt.show()
 
 def question3():
     players = []
@@ -128,7 +125,7 @@ def question5():
 
 
 question1()
-#question2()
+question2()
 #question3()
 question4()
 question5()

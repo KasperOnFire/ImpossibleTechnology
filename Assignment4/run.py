@@ -4,6 +4,7 @@ import pandas as pd
 import webget as wg
 from collections import OrderedDict
 import operator #used to sort our dictonary!
+from tabulate import tabulate
 
 file_link = "https://www.kaggle.com/kevinmh/fifa-18-more-complete-player-dataset/downloads/complete.csv/5"
 file_name = "complete.csv"
@@ -61,35 +62,17 @@ def question2():
     print("England is the most common nationality. See graph for an overview.")
 
 def question3():
-    '''players = []
-    diff = []'''
     limit = 10
+    #Using nlargest we find the 10 rows with the largest "eur_value"-value.
     most_valued_players = FifaPlayers.nlargest(limit, "eur_value")
+    #Calculating the difference between release clause and value
     clause_release_difference = most_valued_players["eur_release_clause"] - most_valued_players["eur_value"] 
-    
-    answer = most_valued_players["name"] + "    " + clause_release_difference.map(str)
+    #String manipulation to show only the first 9 chars of name in order to display result better.
+    answer = most_valued_players["name"].astype(str).str[0:9] + ":    " + clause_release_difference.map(str) + " EUR"
     print("Question 3")
     print("What is the difference of the release clause and value of the 10 most valueable players?")
-    print(answer)
-    
-    '''for player in fp:
-        players.append(player[1])
-        diff.append(player[18] - player[17])
-
-    players = players[np.argsort(-diff)][:limit]
-    diff = np.sort(diff)[::-1][:limit]
-
-    plt.figure("Question 3")
-    plt.title(
-        "What is the difference of the release clause and value 10 most valueable players?"
-    )
-    plt.xlabel("Player", fontSize=8)
-    plt.ylabel("Difference", fontSize=12)
-    plt.bar(players, diff)
-    plt.xticks(rotation=70)
-    plt.tight_layout()
-    for a, b in zip(players, diff):
-        plt.text(a, b, str(b), horizontalAlignment="center")'''
+    #Removing the index column from answer
+    print(answer.to_string(index = False), )
 
 def question4():
     #Making sure we don't use scientific values for more understandable/readable result
@@ -137,7 +120,6 @@ def question4():
     print("See graphs for an overview of the different frequencies")
 
 
-
 def question5():
     #Make a new column with the difference between eur_value and eur_wage as the value
     FifaPlayers["difference"] = FifaPlayers["eur_value"] - FifaPlayers["eur_wage"]
@@ -154,3 +136,25 @@ question3()
 question4()
 question5()
 plt.show()
+
+    
+#outcommented from question3
+'''for player in fp:
+        players.append(player[1])
+        diff.append(player[18] - player[17])
+
+    players = players[np.argsort(-diff)][:limit]
+    diff = np.sort(diff)[::-1][:limit]
+
+
+    plt.figure("Question 3")
+    plt.title(
+        "What is the difference of the release clause and value 10 most valueable players?"
+    )
+    plt.xlabel("Player", fontSize=8)
+    plt.ylabel("Difference", fontSize=12)
+    plt.bar(players, diff)
+    plt.xticks(rotation=70)
+    plt.tight_layout()
+    for a, b in zip(players, diff):
+        plt.text(a, b, str(b), horizontalAlignment="center")'''

@@ -9,8 +9,15 @@ def question1(): #Missing plots
     result = Counter(pd_file.Professional)
     print(result)
 
-def question2():
-    pass
+def question2(): #Missing plots
+    countries = Counter(pd_file.Country)
+    result = {}
+    total = 0.0
+    for country, value in countries.items(): #Calculating total amount of dev
+        total += value
+    for country, value in countries.items(): #
+        result[country] = ((value / total) * 100 )
+    print(result)
 
 def question3(): #Missing plots
     result = {}
@@ -57,6 +64,7 @@ def question5(): #Done
     print('Answer question 5:', abc[-1:])
 
 question1()
+question2()
 question3()
 question4()
 question5()

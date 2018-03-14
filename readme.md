@@ -1,7 +1,7 @@
 # Impossible Technology - Python group
 ## David Martin Carl, Tjalfe Jon Klarskov Møller, Anton Kornholt & Kasper Ravn Breindal
 
-### Dataset #1
+### Dataset
 [StackOverflow yearly survey](https://www.kaggle.com/stackoverflow/so-survey-2017/data)
 Also avaible in Datasets folder in current repository, as of 15/2/2018.
 
@@ -12,7 +12,9 @@ Also avaible in Datasets folder in current repository, as of 15/2/2018.
 4. what is the most popular IDE?
 5. What framework do most developers want to work in?
 
-### Dataset #2
+___
+
+### Backup Dataset
 [55000+ Song lyrics](https://www.kaggle.com/mousehead/songlyrics/data)
 Also avaible in Datasets folder in current repository, as of 15/2/2018.
 

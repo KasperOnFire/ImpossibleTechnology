@@ -34,10 +34,20 @@ def question1():
     plt.tight_layout()
     for a, b in zip(years, count):
         plt.text(a, b, str(b), horizontalAlignment="center")
-   
+    plt.show()
 def question2():
-    pass
-
+    imdb_titles_series = imdb_titles[imdb_titles.endYear != "\\N"]
+    series_endyear_count = imdb_titles_series.groupby("endYear")["endYear"].count()
+    limit = 10
+    years_with_most_ended_series = series_endyear_count.nlargest(limit)
+    years_with_most_ended_series.plot.bar()
+    plt.title("Which year did the most series end?")
+    plt.xlabel("Years", fontSize=12)
+    plt.xticks(rotation=90)
+    plt.ylabel("Count", fontSize=12)
+    plt.subplots_adjust(bottom=0.2)
+    plt.show()
+    
 def question3():
     pass
 
@@ -52,5 +62,5 @@ def question5():
     print(average_runtime)
 
 #question1()
-question5()
-plt.show()
+question2()
+#question5()

@@ -79,19 +79,8 @@ def question5():
     average_runtime = np.sum(imdb_titles_adult[:, 7].astype(int)) / adult_movies_count
     print(average_runtime)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#question1()
+question1()
 #question2()
 question3()
 #question5()
-=======
-question1()
-# question2()
-# question5()
->>>>>>> 10e1f30a4d320430891070c29451dd9e3d83764d
-=======
-# question1()
-# question2()
-question5()
->>>>>>> 0429f49c1a1d9ae157d29efda69d245c5018c1bb
+

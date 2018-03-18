@@ -18,8 +18,12 @@ imdb_titles_matrix = imdb_titles.as_matrix()
 
 def question1():
     mask = (imdb_titles_matrix[:, 1] != "movie")
-    imdb_titles_movies = imdb_titles_matrix[mask]
-    years, count = np.unique(imdb_titles_movies[:, 5], return_counts=True)
+    imdb_titles_movies = imdb_titles_matrix[mask][:,5]
+    imdb_titles_movies = imdb_titles_movies[imdb_titles_movies != "\\N"]
+    imdb_titles_movies = np.array([str(x) for x in imdb_titles_movies])
+    
+    print(imdb_titles_movies)
+    years, count = np.unique(imdb_titles_movies, return_counts=True)
     limit = 10
 
     years = years[np.argsort(-count)][:limit]
@@ -35,6 +39,7 @@ def question1():
     for a, b in zip(years, count):
         plt.text(a, b, str(b), horizontalAlignment="center")
     plt.show()
+
 def question2():
     imdb_titles_series = imdb_titles[imdb_titles.endYear != "\\N"]
     series_endyear_count = imdb_titles_series.groupby("endYear")["endYear"].count()
@@ -61,6 +66,6 @@ def question5():
     average_runtime = imdb_titles_adult[:, 7].astype(int) / adult_movies_count
     print(average_runtime)
 
-#question1()
-question2()
-#question5()
+question1()
+# question2()
+# question5()

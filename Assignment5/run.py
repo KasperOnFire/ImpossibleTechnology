@@ -27,7 +27,6 @@ def question1():
     imdb_titles_movies = imdb_titles_movies[imdb_titles_movies != "\\N"]
     imdb_titles_movies = np.array([str(x) for x in imdb_titles_movies])
     
-    print(imdb_titles_movies)
     years, count = np.unique(imdb_titles_movies, return_counts=True)
     limit = 10
 

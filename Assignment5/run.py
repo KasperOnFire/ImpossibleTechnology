@@ -8,15 +8,18 @@ file_link = "https://datasets.imdbws.com/title.basics.tsv.gz"
 file_name = "imdb_titles.tsv.gz"
 zipped_file = wg.download(file_link, file_name)
 file = gzip.GzipFile(zipped_file)
-imdb_titles = pd.read_csv(file, delimiter='\t')
-imdb_titles_matrix = imdb_titles.as_table()
+imdb_titles = pd.read_table(file)
+imdb_titles = imdb_titles.replace("\\n", '', regex=True)
+imdb_titles_matrix = imdb_titles.as_matrix()
 
 # print(imdb_titles)
 # 0 tconst	1 titleType	2 primaryTitle	3 originalTitle	4 isAdult	5 startYear	6 endYear	7 runtimeMinutes	8 genres
 
 
 def question1():
-    years, count = np.unique(imdb_titles_matrix[:, 5], return_counts=True)
+    mask = (imdb_titles_matrix[:, 1] != "movie")
+    imdb_titles_movies = imdb_titles_matrix[mask]
+    years, count = np.unique(imdb_titles_movies[:, 5], return_counts=True)
     limit = 10
 
     years = years[np.argsort(-count)][:limit]
@@ -32,6 +35,22 @@ def question1():
     for a, b in zip(years, count):
         plt.text(a, b, str(b), horizontalAlignment="center")
    
+def question2():
+    pass
 
-question1()
+def question3():
+    pass
+
+def question4():
+    pass
+
+def question5():
+    mask = (imdb_titles_matrix[:, 4] == 1)
+    imdb_titles_adult = imdb_titles_matrix[mask]
+    adult_movies_count = imdb_titles_adult.shape[0]
+    average_runtime = imdb_titles_adult[:, 7].astype(int) / adult_movies_count
+    print(average_runtime)
+
+#question1()
+question5()
 plt.show()

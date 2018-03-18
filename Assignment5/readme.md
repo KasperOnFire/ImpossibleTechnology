@@ -4,7 +4,7 @@
 
 ### Dataset
 
-[FIFA18players](https://raw.githubusercontent.com/INFINITE-KH/Python-Dataset/master/complete.csv)
+[IMDB Titles dataset](https://datasets.imdbws.com/title.basics.tsv.gz)
 
 ### Dependencies & how to run
 
@@ -14,9 +14,10 @@ The following dependencies should be installed in your system, either via `conda
 import pandas
 import matplotlib
 import numpy
+import gzip
 ```
 
-Clone from git repository and run the project from command promt with the command line:
+Clone from git repository, `cd Assignment5` and run the project from command promt with the command line:
 
 `python run.py`
 
@@ -26,64 +27,37 @@ Our run.py file contains a webget that downloads the dataset upon running the fi
 
 ### Images
 
+#### Question 1
+
+![Question 1](img/Question_1.png)
+
 Question 2
 ![Question 2](img/Question_2.png)
 
 Question 4
-![Question 4: Age](img/Age_Frequence.png)
+![Question 4](img/Question_4.png)
 
-![Question 4: Height](img/Height_Frequence.png)
-
-![Question 4: Weight](img/Weight_Frequence.png)
 
 ### Questions
 
-Question 1: The 3 most expensive teams and the 3 cheapest teams according to player value.
+Question 1: Which year was the most movies released?
 
-Question 2: Which nationality is the most frequent amongst all players
+Question 2: Which year was most series ended?
 
-Question 3: What is the difference between the release clause and the value of top 10 most valuable players
+Question 3: Which genres has the longest runtime per movies?
 
-Question 4: What is the frequency of age, height and weight for all players
+Question 4: Which genre covers the most movies?
 
-Question 5: How big is the average difference between value and wage of the players
+Question 5: What is the average runtime on adult films?
 
 ### Answers
 
-1. 3 Most expensive teams are: 
-* FC Barcelona
-* FC Bayern Munich
-* Real Madrid CF
+1. 2016 is the year with the most releases, see image 1.
 
-3 cheapest teams are: 
-* Bray Wanderers
-* Limerick FC
-* Drogheda United
+2. 2017 is the result we found. See image 2.
 
-2. England is the most common nationality. See image "question 2" for overview.
+3. Western has an average running time of 72.41 minutes.
 
-3. The difference between release clause and value of the 10 most valueable players.
+4. Drama has the most movies in the dataset. See Image 4
 
-* Neymar:       113,800,000.0 EUR.
-
-* L. Messi:     110,300,000.0 EUR.
-
-* L. Suarez:    101,900,000.0 EUR.
-
-* Cristiano:    100,300,000.0 EUR.
-
-* R. Lewand:    59,800,000.0 EUR.
-
-* E. Hazard:    83,700,000.0 EUR.
-
-* K. De Bru:    76,800,000.0 EUR.
-
-* T. Kroos:     83,000,000.0 EUR.
-
-* P. Dybala:    57,300,000.0 EUR.
-
-* G. Higuan:    50,100,000.0 EUR.
-
-4. See the images in section "question 4" for an overview of the frequencies.
-
-5. The average difference between player wages and values are: 2359007 EUR
+5. Average runtime on adult films is 104.74 minutes

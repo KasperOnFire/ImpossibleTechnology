@@ -23,8 +23,7 @@ def fileopener(path_to_file):
             yield line
 
 def question1():
-    mask = (imdb_titles_matrix[:, 1] != "movie")
-    imdb_titles_movies = imdb_titles_matrix[mask][:,5]
+    imdb_titles_movies = imdb_titles_matrix[imdb_titles_matrix[:, 1] != "movie"][:,5]
     imdb_titles_movies = imdb_titles_movies[imdb_titles_movies != "\\N"]
     
     years, count = np.unique(imdb_titles_movies.astype(int), return_counts=True)
@@ -74,13 +73,11 @@ def question4():
     pass
 
 def question5():
-    mask = (imdb_titles_matrix[:, 4] == 1)
-    imdb_titles_adult = imdb_titles_matrix[mask]
+    imdb_titles_adult = imdb_titles_matrix[imdb_titles_matrix[:, 4] == 1]
     imdb_titles_adult = imdb_titles_adult[imdb_titles_adult[:, 7] != "\\N"]
-    adult_movies_count = imdb_titles_adult.shape[0]
-    average_runtime = np.sum(imdb_titles_adult[:, 7].astype(int)) / adult_movies_count
-    print(round(average_runtime, 2))
-
+    average_runtime = np.asarray(imdb_titles_adult[:, 7].astype(int)).mean()
+    print("Average runtime on adult films: %.2f minutes" % average_runtime)
+    
 question1()
 question2()
 question3()

@@ -50,7 +50,9 @@ def question2():
     series_endyear_count = imdb_titles_series.groupby("endYear")["endYear"].count()
     limit = 10
     years_with_most_ended_series = series_endyear_count.nlargest(limit)
-    years_with_most_ended_series.plot.bar()
+    axes = years_with_most_ended_series.plot.bar()
+    for p in axes.patches:
+        axes.annotate(str(p.get_height()), (p.get_x() * 1.005, p.get_height() * 1.005))
     plt.title("Which year did the most series end?")
     plt.xlabel("Years", fontSize=12)
     plt.xticks(rotation=90)
@@ -64,7 +66,7 @@ def question3():
     movies = movies[movies.runtimeMinutes != "\\N"]
     #movie_genres = tuple(movies.genres.unique())
     #print(movie_genres)
-    movies_by_genre = np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean()
+    movies_by_genre = round(np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean(), 2)
     answer = "Average runtime for westerns: %f minutes" %(movies_by_genre)
     print(answer)
 
@@ -77,10 +79,11 @@ def question5():
     imdb_titles_adult = imdb_titles_adult[imdb_titles_adult[:, 7] != "\\N"]
     adult_movies_count = imdb_titles_adult.shape[0]
     average_runtime = np.sum(imdb_titles_adult[:, 7].astype(int)) / adult_movies_count
-    print(average_runtime)
+    print(round(average_runtime, 2))
 
 question1()
-#question2()
+question2()
 question3()
-#question5()
+question5()
+plt.show()
 

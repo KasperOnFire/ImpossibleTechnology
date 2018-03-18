@@ -58,6 +58,7 @@ def question2():
     plt.ylabel("Count", fontSize=12)
     plt.subplots_adjust(bottom=0.2)
     plt.show()
+
     
 def question3():
     movies = imdb_titles.loc[imdb_titles["titleType"] == "movie"]
@@ -69,8 +70,38 @@ def question3():
     answer = "Average runtime for westerns: %.2f minutes" %(movies_by_genre)
     print(answer)
 
+def question4_helper(genres, titletype):
+    genre_dict = {}
+    index = 0
+    print('Running, can be a bit slow... So please dont worry!')
+    for genre in genres:
+        if titletype[index] == 'movie':
+            genre_array = genre.split(',')
+            for splitgenre in genre_array:
+                if splitgenre != "\\N":
+                    if splitgenre in genre_dict:
+                        genre_dict[splitgenre] = genre_dict[splitgenre] + 1
+                    else:
+                        genre_dict[splitgenre] = 1
+        index += 1
+    return genre_dict
+ 
 def question4():
-    pass
+    genres = imdb_titles.genres
+    title_type = imdb_titles.titleType
+    result = question4_helper(genres, title_type)
+    print(result)
+ 
+    lists = sorted(result.items())
+    x, y = zip(*lists)
+    
+    plt.title("Which genre covers the most movies?")
+    plt.xlabel("Genres", fontSize=12)
+    plt.xticks(rotation=90)
+    plt.ylabel("Amount", fontSize=12)
+    plt.bar(x, y)
+    plt.show()
+
 
 def question5():
     imdb_titles_adult = imdb_titles_matrix[imdb_titles_matrix[:, 4] == 1]
@@ -81,6 +112,7 @@ def question5():
 question1()
 question2()
 question3()
+question4()
 question5()
-plt.show()
+
 

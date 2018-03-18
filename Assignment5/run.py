@@ -9,7 +9,8 @@ file_name = "imdb_titles.tsv.gz"
 zipped_file = wg.download(file_link, file_name)
 file = gzip.GzipFile(zipped_file)
 imdb_titles = pd.read_table(file)
-imdb_titles = imdb_titles.replace("\\n", '', regex=True)
+#imdb_titles = imdb_titles[imdb_titles.runtimeMinutes != r"\N"]
+#imdb_titles = imdb_titles.replace("\\n", '', regex=True)
 imdb_titles_matrix = imdb_titles.as_matrix()
 
 # print(imdb_titles)
@@ -49,7 +50,14 @@ def question2():
     plt.show()
     
 def question3():
-    pass
+    movies = imdb_titles.loc[imdb_titles["titleType"] == "movie"]
+    movies = movies[movies.genres != "\\N"]
+    movies = movies[movies.runtimeMinutes != "\\N"]
+    #movie_genres = tuple(movies.genres.unique())
+    #print(movie_genres)
+    movies_by_genre = np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean()
+    answer = "Average runtime for westerns: %f minutes" %(movies_by_genre)
+    print(answer)
 
 def question4():
     pass
@@ -62,5 +70,6 @@ def question5():
     print(average_runtime)
 
 #question1()
-question2()
+#question2()
+question3()
 #question5()

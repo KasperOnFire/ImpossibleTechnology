@@ -10,11 +10,8 @@ file_name = "imdb_titles.tsv.gz"
 zipped_file = wg.download(file_link, file_name)
 file = gzip.GzipFile(zipped_file)
 imdb_titles = pd.read_table(file)
-#imdb_titles = imdb_titles[imdb_titles.runtimeMinutes != r"\N"]
-#imdb_titles = imdb_titles.replace("\\n", '', regex=True)
 imdb_titles_matrix = imdb_titles.as_matrix()
 
-# print(imdb_titles)
 # 0 tconst	1 titleType	2 primaryTitle	3 originalTitle	4 isAdult	5 startYear	6 endYear	7 runtimeMinutes	8 genres
 
 def fileopener(path_to_file):
@@ -43,6 +40,7 @@ def question1():
     for a, b in zip(years, count):
         plt.text(a, b, str(b), horizontalAlignment="center")
     plt.show()
+    print("Question 1:\nMost movies where released in 2016 - see image for more details")
 
 def question2():
     imdb_titles_series = imdb_titles[imdb_titles.endYear != "\\N"]
@@ -58,17 +56,32 @@ def question2():
     plt.ylabel("Count", fontSize=12)
     plt.subplots_adjust(bottom=0.2)
     plt.show()
+    print("Question 2:\nThe most series ended in 2017 - see image for more details")
 
     
 def question3():
     movies = imdb_titles.loc[imdb_titles["titleType"] == "movie"]
     movies = movies[movies.genres != "\\N"]
     movies = movies[movies.runtimeMinutes != "\\N"]
-    # movie_genres = tuple(movies.genres.unique())
-    # print(movie_genres)
-    movies_by_genre = np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean()
-    answer = "Average runtime for westerns: %.2f minutes" %(movies_by_genre)
-    print(answer)
+    movies.runtimeMinutes = pd.to_numeric(movies["runtimeMinutes"], errors="coerce")
+    movies_genre_count = movies.groupby("genres")["genres"].count()
+    movies_genre_runtime_sum = movies.groupby("genres")["runtimeMinutes"].sum()
+    movies_avg_runtime_by_genre = movies_genre_runtime_sum/movies_genre_count
+    limit = 10
+    longest_avg_runtime_by_genre = movies_avg_runtime_by_genre.nlargest(limit)
+    
+    plt.rc("font", size=10)
+    ax = longest_avg_runtime_by_genre.plot.bar()
+    for p in ax.patches:
+        ax.annotate(str(p.get_height()), (p.get_x() * 1.005, p.get_height() * 1.005))
+    plt.title("Genres with longest average runtime")
+    plt.xlabel("Genre", fontSize=12)
+    plt.xticks(rotation=90)
+    plt.ylabel("Runtime(Minutes)", fontSize=12)
+    plt.subplots_adjust(bottom=0.4)
+    plt.show()
+    print("Question 3 - longest average runtime per genre:")
+    print(longest_avg_runtime_by_genre)
 
 def question4_helper(genres, titletype):
     genre_dict = {}
@@ -90,8 +103,7 @@ def question4():
     genres = imdb_titles.genres
     title_type = imdb_titles.titleType
     result = question4_helper(genres, title_type)
-    print(result)
- 
+
     lists = sorted(result.items())
     x, y = zip(*lists)
     
@@ -101,13 +113,14 @@ def question4():
     plt.ylabel("Amount", fontSize=12)
     plt.bar(x, y)
     plt.show()
-
+    print("Question 4:\nThere are most drama movies in the dataset")
+    print(result)
 
 def question5():
     imdb_titles_adult = imdb_titles_matrix[imdb_titles_matrix[:, 4] == 1]
     imdb_titles_adult = imdb_titles_adult[imdb_titles_adult[:, 7] != "\\N"]
     average_runtime = np.asarray(imdb_titles_adult[:, 7].astype(int)).mean()
-    print("Average runtime on adult films: %.2f minutes" % average_runtime)
+    print("Question 5:\nAverage runtime on adult films: %.2f minutes" % average_runtime)
     
 question1()
 question2()

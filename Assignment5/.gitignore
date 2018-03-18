@@ -102,3 +102,4 @@ ENV/
 
 .gz
 .tsv
+imdb_titles.tsv.gz

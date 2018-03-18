@@ -25,6 +25,8 @@ Or by opening the run file in your chosen environment and running the file.
 
 Our run.py file contains a webget that downloads the dataset upon running the file. 
 
+Our answer to question 4 takes a while. Don't worry it has not crashed - give it time!
+
 ### Images
 
 #### Question 1
@@ -34,6 +36,10 @@ Our run.py file contains a webget that downloads the dataset upon running the fi
 #### Question 2
 
 ![Question 2](img/Question_2.png)
+
+#### Question 3
+
+![Question 3](img/Question_3.png)
 
 #### Question 4
 
@@ -58,8 +64,8 @@ Question 5: What is the average runtime on adult films?
 
 2. 2017 is the result we found. See image 2.
 
-3. Western has an average running time of 72.41 minutes.
+3. The "Gameshow" genre has the longest average runtime. See Image 3.
 
-4. Drama has the most movies in the dataset. See Image 4
+4. Drama has the most movies in the dataset. See Image 4.
 
-5. Average runtime on adult films is 104.74 minutes
+5. Average runtime on adult films is 104.74 minutes.

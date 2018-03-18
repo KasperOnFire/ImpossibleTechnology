@@ -31,10 +31,12 @@ Our run.py file contains a webget that downloads the dataset upon running the fi
 
 ![Question 1](img/Question_1.png)
 
-Question 2
+#### Question 2
+
 ![Question 2](img/Question_2.png)
 
-Question 4
+#### Question 4
+
 ![Question 4](img/Question_4.png)
 
 

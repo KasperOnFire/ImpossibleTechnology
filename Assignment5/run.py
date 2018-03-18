@@ -33,7 +33,7 @@ def question1():
     count = np.sort(count)[::-1][:limit]
 
     plt.figure("Question 1")
-    plt.title("Which year was the most movies relea sed?")
+    plt.title("Which year was the most movies released?")
     plt.xlabel("Years", fontSize=8)
     plt.ylabel("Count", fontSize=12)
     plt.bar(years, count)
@@ -63,10 +63,10 @@ def question3():
     movies = imdb_titles.loc[imdb_titles["titleType"] == "movie"]
     movies = movies[movies.genres != "\\N"]
     movies = movies[movies.runtimeMinutes != "\\N"]
-    #movie_genres = tuple(movies.genres.unique())
-    #print(movie_genres)
-    movies_by_genre = round(np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean(), 2)
-    answer = "Average runtime for westerns: %f minutes" %(movies_by_genre)
+    # movie_genres = tuple(movies.genres.unique())
+    # print(movie_genres)
+    movies_by_genre = np.asarray(movies.groupby("genres").get_group("Western")["runtimeMinutes"]).astype(int).mean()
+    answer = "Average runtime for westerns: %.2f minutes" %(movies_by_genre)
     print(answer)
 
 def question4():

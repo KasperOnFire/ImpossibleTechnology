@@ -21,6 +21,6 @@ Also avaible in Datasets folder in current repository, as of 15/2/2018.
 ### Questions
 1. What is the most used words in the songs?
 2. How many times are each word repeated in a song? (Or perhaps - what song repeats the top 4 repeated words the most? - finds the most repetitive song)
-3. What song uses the word "X" the most time? (X meaning a specific word)
+3. What song uses the word "X" the most time? (X meaning a specific word, choose your own!)
 4. What is the average number of words per song?
-5. Show the distribution of number of words in the songs.
+5. Show the distribution of number of words in the songs. (Example: how many songs have 5-10 words, 10-20 words)

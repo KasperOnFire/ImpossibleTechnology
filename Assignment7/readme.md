@@ -4,7 +4,7 @@
 
 ### Dataset
 
-[IMDB Titles dataset](https://datasets.imdbws.com/title.basics.tsv.gz)
+[Coin API](https://www.coinapi.io/?gclid=Cj0KCQiA_JTUBRD4ARIsAL7_VeVq1VpdI3iIWcKh00m6zOVqIqf3kVKoUOblxW49gkfQIKJx5h-uiQoaAqTREALw_wcB)
 
 ### Dependencies & how to run
 

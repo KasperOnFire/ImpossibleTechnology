@@ -3,7 +3,7 @@ import pandas as pd
 from collections import Counter
 
 
-file_name = 'trades_march_to_april_2018.csv'
+file_name = 'info.csv'
 df = pd.read_csv(file_name, sep=';')
 
 def question1():

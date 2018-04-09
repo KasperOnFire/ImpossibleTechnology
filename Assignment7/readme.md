@@ -44,12 +44,12 @@ Question 5: What is the total volume per day (graph)?
 
 ### Answers
 
-1. 29.38
+1. The transaction with the highest volume is 29.38 - equivalent to just around 1.2 million DKK as of todays date.
 
-2. The hours with the most transactions can be seen in the bar plot with the title 'Question 2' 
+2. The hours with the most transactions can be seen in the bar plot with the title 'Question 2'.
 
 3. 5075 bought and 4925 sold. So buying was the favorite.
 
-4. 6627.70 for both buying and selling makes sense as whatever someone is selling another one is buying.
+4. 6627.70 for both buying and selling, makes sense since whatever someone is selling - another one is buying.
 
-5. ?
+5. The total volume is 2909.73. There is no graph, since there only is data for one day. From this result we can gather that the bulk of transactions are on very small amounts of currency, since there is 10k transactions, but only ~3k in volume. But of course, bitcoin is worth quite a lot, so this does make sense.

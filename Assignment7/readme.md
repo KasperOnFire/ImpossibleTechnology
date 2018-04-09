@@ -1,12 +1,10 @@
-I renamed the size column in the CSV file because otherwise pandas wouldnt not function correctly. I renamed it from 'size' to 'sizetransfer'
-
 ﻿# Impossible Technology
 
 ## David Martin Carl, Tjalfe Jon Klarskov Møller, Anton Kornholt & Kasper Ravn Breindal
 
 ### Dataset
 
-[IMDB Titles dataset](https://datasets.imdbws.com/title.basics.tsv.gz)
+[Coin API](https://www.coinapi.io/?gclid=Cj0KCQiA_JTUBRD4ARIsAL7_VeVq1VpdI3iIWcKh00m6zOVqIqf3kVKoUOblxW49gkfQIKJx5h-uiQoaAqTREALw_wcB)
 
 ### Dependencies & how to run
 
@@ -24,10 +22,12 @@ Clone from git repository, `cd Assignment7` and run the project from command pro
 
 Or by opening the run file in your chosen environment and running the file.
 
+The size column in the CSV file was renamed because otherwise pandas would not function correctly. It was renamed from 'size' to 'sizetransfer'
+
 ### Images
 
 #### Question 2
-
+![Question 2](img/question_2.png)
 
 
 ### Questions

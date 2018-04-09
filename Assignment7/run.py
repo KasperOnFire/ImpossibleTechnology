@@ -2,6 +2,9 @@ import csv
 import pandas as pd
 from collections import Counter
 
+import matplotlib.pyplot as plt
+
+import datetime as dt
 
 file_name = 'info.csv'
 df = pd.read_csv(file_name, sep=';')
@@ -15,8 +18,15 @@ def question1():
     print('%.2f' % largest_trans)
 
 def question2():
-    print('TBD')
-
+    time_df = pd.read_csv(file_name, sep=';', parse_dates=[1], index_col=[0])
+    time_df2 = time_df[['time_exchange']]
+    result = time_df2.groupby(time_df2["time_exchange"].dt.hour).count()
+    result_bar = result["time_exchange"].plot.bar()
+    result_bar.set_xlabel("Time(Hours) on 7/4 2018")
+    result_bar.set_ylabel("Number of transactions")
+    result_bar.set_title("Question 2")
+    plt.show()
+    print("The hours with the most transactions can be seen in the bar plot with the title 'Question 2' ")
 def question3():
     result = Counter(df.taker_side)
     print(result)

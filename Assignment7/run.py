@@ -3,7 +3,7 @@ import pandas as pd
 from collections import Counter
 import matplotlib
 import matplotlib.pyplot as plt
-
+import numpy as np
 import datetime as dt
 
 file_name = 'info.csv'
@@ -44,27 +44,12 @@ def question3():
 
 
 def question4():
-    price = df.price
-    trans_type = df.taker_side
-    index = 0
-    buy_sum = 0
-    buy_trans = 0
-    sell_sum = 0
-    sell_trans = 0
-    for row in trans_type:
-        index += 0
-        if row == 'BUY':
-            buy_sum += price[index]
-            buy_trans += 1
-        else:
-            sell_sum += price[index]
-            sell_trans += 1
-
-    print('%.2f' % (buy_sum / buy_trans))
-    print('%.2f' % (sell_sum / sell_trans))
-    print(
-        'Seems odd the results are the same (basicly) but would make sense in the way that this is both sellings and buyings! And the one buying is buying from the one selling.'
-    )
+    prices = np.asarray(df)
+    buy = prices[prices[:,6] == 'BUY'][:,4]
+    sell = prices[prices[:,6] == 'SELL'][:,4]
+    print('%.2f' % buy.mean())
+    print('%.2f' % sell.mean())
+    
 
 
 def question5():
@@ -72,7 +57,7 @@ def question5():
     for row in df.sizetransfer:
         total_volume = total_volume + float(row)
     print('%.2f' % total_volume)
-    plt.
+    plt.show()
 
 
 print('\nquestion 1')

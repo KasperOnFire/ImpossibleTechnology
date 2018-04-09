@@ -1,5 +1,3 @@
-I renamed the size column in the CSV file because otherwise pandas wouldnt not function correctly. I renamed it from 'size' to 'sizetransfer'
-
 ﻿# Impossible Technology
 
 ## David Martin Carl, Tjalfe Jon Klarskov Møller, Anton Kornholt & Kasper Ravn Breindal
@@ -23,6 +21,8 @@ Clone from git repository, `cd Assignment7` and run the project from command pro
 `python run.py`
 
 Or by opening the run file in your chosen environment and running the file.
+
+The size column in the CSV file was renamed because otherwise pandas would not function correctly. It was renamed from 'size' to 'sizetransfer'
 
 ### Images
 

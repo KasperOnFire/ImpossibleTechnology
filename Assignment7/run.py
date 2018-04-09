@@ -1,13 +1,19 @@
 import csv
 import pandas as pd
 from collections import Counter
-
+import matplotlib
 import matplotlib.pyplot as plt
 
 import datetime as dt
 
 file_name = 'info.csv'
 df = pd.read_csv(file_name, sep=';')
+
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
 
 def question1():
     largest_trans = 0

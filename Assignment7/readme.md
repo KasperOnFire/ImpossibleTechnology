@@ -27,7 +27,7 @@ Or by opening the run file in your chosen environment and running the file.
 ### Images
 
 #### Question 2
-
+![Question 2](img/question_2.png)
 
 
 ### Questions

@@ -1,0 +1,1 @@
+I renamed the size column in the CSV file because otherwise pandas wouldnt not function correctly. I renamed it from 'size' to 'sizetransfer'

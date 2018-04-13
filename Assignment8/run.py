@@ -16,19 +16,15 @@ ks_matrix = ks_df.as_matrix()
 
 def question_1():
     main, count = np.unique(ks_matrix[:, 3], return_counts=True)
-    main = main[np.argsort(-count)]
-    count = np.sort(count)[::-1]
 
     mask = (ks_matrix[:, 9] == "successful")
     successful_ks_projects = ks_matrix[mask]
     main_success, success_count = np.unique(successful_ks_projects [:, 3], return_counts=True)
-    main_success = main_success[np.argsort(-count)]
-    success_count = np.sort(success_count)[::-1]
 
     success_rate = (success_count/count)*100
 
     plt.figure("Question 1")
-    plt.title("Most sucessful kickstarter main category?")
+    plt.title("Most sucessful kickstarter main category")
     plt.xlabel("Main Category", fontSize=10)
     plt.ylabel("Success rate (%)", fontSize=12)
     plt.bar(main_success, success_rate)
@@ -39,17 +35,17 @@ def question_1():
     plt.show()
 
     print("Question 1")
-    print("Journalism is the most successful main category with a 53.53% successrate")
+    print("Dance is the most successful main category with a 62.05% successrate")
 
 def question_2():
-    mask = (ks_matrix[:, 3] == "Journalism")
+    mask = (ks_matrix[:, 3] == "Dance")
     journalism_ks_projects = ks_matrix[mask]
     category, count = np.unique(journalism_ks_projects[:, 2], return_counts=True)
     category = category[np.argsort(-count)]
     count = np.sort(count)[::-1]
 
     plt.figure("Question 2")
-    plt.title("Most proposed project category for journalism?")
+    plt.title("Most proposed project category for dance")
     plt.xlabel("Category", fontSize=10)
     plt.ylabel("Count", fontSize=12)
     plt.bar(category, count)
@@ -60,7 +56,7 @@ def question_2():
     plt.show()
 
     print("Question 2")
-    print("Journalism is the most proposed category with 1747 projects")
+    print("Dance is the most proposed category with 2322 projects")
 
 def question_3():
     mask = (ks_matrix[:, 9] == "successful")

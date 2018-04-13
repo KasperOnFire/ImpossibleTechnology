@@ -60,13 +60,13 @@ def question_2():
     plt.show()
 
     print("Question 2")
-    print("Journalism is the proposed category with 1747 projects")
+    print("Journalism is the most proposed category with 1747 projects")
 
 def question_3():
     mask = (ks_matrix[:, 9] == "successful")
     successful_ks_projects = ks_matrix[mask]
-    ks_pledge_median = np.median(successful_ks_projects[:,12])
-    result = "The pledged median of successful projects is: " + str(ks_pledge_median)
+    ks_pledge_median = np.median(successful_ks_projects[:,13])
+    result = "The pledged median of successful projects is: " + str(ks_pledge_median) + "$"
     print("Question 3")
     print(result)
     

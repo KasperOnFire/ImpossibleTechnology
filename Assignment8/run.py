@@ -110,14 +110,14 @@ def question_5():
                 range1['failed'] = range1['failed'] + 1
         if each > 20000 and each < 39999:
             if state[loop] == 'successful':
-                range2['successful'] = range1['successful'] + 1
+                range2['successful'] = range2['successful'] + 1
             else:
-                range2['failed'] = range1['failed'] + 1
+                range2['failed'] = range2['failed'] + 1
         if each > 40000 and each < 59999:
             if state[loop] == 'successful':
-                range3['successful'] = range1['successful'] + 1
+                range3['successful'] = range3['successful'] + 1
             else:
-                range3['failed'] = range1['failed'] + 1
+                range3['failed'] = range3['failed'] + 1
         loop += 1
     print('Range $0 to $19999',range1)
     print('Range $20000 to $39999',range2)

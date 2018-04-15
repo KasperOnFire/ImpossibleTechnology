@@ -22,7 +22,6 @@ Clone from git repository, `cd Assignment8` and run the project from command pro
 
 Or by opening the run file in your chosen environment and running the file.
 
-The size column in the CSV file was renamed because otherwise pandas would not function correctly. It was renamed from 'size' to 'sizetransfer'
 
 ### Images
 

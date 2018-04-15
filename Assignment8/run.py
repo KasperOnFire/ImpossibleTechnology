@@ -96,10 +96,36 @@ def question_4():
 
 
 def question_5():
-    pass
+    goal = ks_df.usd_goal_real
+    state  = ks_df.state
+    range1 = {'successful': 0, 'failed': 0}
+    range2 = {'successful': 0, 'failed': 0}
+    range3 = {'successful': 0, 'failed': 0}
+    loop = 0
+    for each in goal:
+        if each > 0 and each < 19999:
+            if state[loop] == 'successful':
+                range1['successful'] = range1['successful'] + 1
+            else:
+                range1['failed'] = range1['failed'] + 1
+        if each > 20000 and each < 39999:
+            if state[loop] == 'successful':
+                range2['successful'] = range1['successful'] + 1
+            else:
+                range2['failed'] = range1['failed'] + 1
+        if each > 40000 and each < 59999:
+            if state[loop] == 'successful':
+                range3['successful'] = range1['successful'] + 1
+            else:
+                range3['failed'] = range1['failed'] + 1
+        loop += 1
+    print('Range $0 to $19999',range1)
+    print('Range $20000 to $39999',range2)
+    print('Range $40000 to $59999',range3)
 
 
-question_1()
+''' question_1()
 question_2()
 question_3()
-question_4()
+question_4() '''
+question_5()

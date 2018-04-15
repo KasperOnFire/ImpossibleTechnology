@@ -59,4 +59,7 @@ Question 5: For the main-category with the most successfully funded projects (qu
 
 4. This is very different based on genre. See image 3 for a graph. "Film and Video" is the largest/most popular by a fair bit.
 
-5. pass
+5. Range $0 to $19999 {'successful': 117856, 'failed': 175340}
+Range $20000 to $39999 {'successful': 7547, 'failed': 24716}
+Range $40000 to $59999 {'successful': 2429, 'failed': 11938}
+

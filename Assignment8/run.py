@@ -80,7 +80,7 @@ def question_4():
         ks_matrix[:, 13] > 5000)
     result = ks_matrix[mask_successful_over_5k]
     #get the count of each category
-    categories, occurrences = np.unique(result[3], return_counts=True)
+    categories, occurrences = np.unique(result[:, 3], return_counts=True)
 
     plt.figure("Question 4")
     plt.title(

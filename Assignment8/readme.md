@@ -28,15 +28,15 @@ The size column in the CSV file was renamed because otherwise pandas would not f
 
 #### Question 1
 
-![Question 1](img/question_1.png)
+![Question 1](img/Question_1.png)
 
 #### Question 2
 
-![Question 2](img/question_2.png)
+![Question 2](img/Question_2.png)
 
 #### Question 4
 
-![Question 4](img/question_4.png)
+![Question 4](img/Question_4.png)
 
 ### Questions
 

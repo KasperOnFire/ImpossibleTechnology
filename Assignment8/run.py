@@ -124,8 +124,8 @@ def question_5():
     print('Range $40000 to $59999',range3)
 
 
-''' question_1()
+question_1()
 question_2()
 question_3()
-question_4() '''
+question_4()
 question_5()

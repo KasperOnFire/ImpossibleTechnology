@@ -43,9 +43,9 @@ def question_1():
 
 def question_2():
     mask = (ks_matrix[:, 3] == "Dance")
-    journalism_ks_projects = ks_matrix[mask]
+    dance_ks_projects = ks_matrix[mask]
     category, count = np.unique(
-        journalism_ks_projects[:, 2], return_counts=True)
+        dance_ks_projects[:, 2], return_counts=True)
     category = category[np.argsort(-count)]
     count = np.sort(count)[::-1]
 

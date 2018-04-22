@@ -51,15 +51,15 @@ Question 5: How many times do both presidents mention "obamacare", respectively?
 
 ### Answers
 
-1. "Dance" has the highest successrate with 62.05% funded. See Image 1.
+1. Obamas tweets per week in 2016 and 2017 can be seen in the two corresponding bar plots
 
-2. Subcategory "Dance" of "Dance" (yeah i know) has the highest number of proposals. See Image 2.
+2. Trump tweets per week in 2016 and 2017 can be seen in the two corresponding bar plots
 
-3. The median pledged of successful projects is $5107.25
+3. Obama wrote 'yes we can' 1 time in the data set
+Trump wrote 'make america great again!' 62 times in the data set
 
-4. This is very different based on genre. See image 3 for a graph. "Film and Video" is the largest/most popular by a fair bit.
+4. Obama wrote 'Iran' 61 time in the data set
+Trump wrote 'Iran' 20 times in the data set
 
-5. Range $0 to $19999 {'successful': 117856, 'failed': 175340}
-Range $20000 to $39999 {'successful': 7547, 'failed': 24716}
-Range $40000 to $59999 {'successful': 2429, 'failed': 11938}
-
+5. Obama wrote 'Obamacare' 111 time in the data set
+Trump wrote 'Obamacare' 109 times in the data set

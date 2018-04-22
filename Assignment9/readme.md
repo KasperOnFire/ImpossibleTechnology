@@ -16,7 +16,7 @@ import matplotlib
 import numpy
 ```
 
-Clone from git repository, `cd Assignment8` and run the project from command promt with the command line:
+Clone from git repository, `cd Assignment9` and run the project from command promt with the command line:
 
 `python run.py`
 

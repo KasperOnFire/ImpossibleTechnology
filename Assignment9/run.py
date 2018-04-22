@@ -24,35 +24,72 @@ def question_1():
     obama_tweets_16 = obama_tweet_dates.where(obama_tweet_dates["created_at"].dt.year == 2016)
     obama_tweets_17 = obama_tweet_dates.where(obama_tweet_dates["created_at"].dt.year == 2017)
 
-    obama_tweet_16_count = obama_tweets_16.groupby([obama_tweets_16["created_at"].dt.year, obama_tweets_16["created_at"].dt.week]).count()
-    obama_tweet_17_count = obama_tweets_17.groupby([obama_tweets_17["created_at"].dt.year, obama_tweets_17["created_at"].dt.week]).count()
-    
-    print("Obamas tweets per week in 2016")
-    print(obama_tweet_16_count)
-    print("Obamas tweets per week in 2017")
-    print(obama_tweet_17_count)
+    obama_tweet_16_count = obama_tweets_16.groupby([obama_tweets_16["created_at"].dt.week]).count()
+    obama_tweet_17_count = obama_tweets_17.groupby([obama_tweets_17["created_at"].dt.week]).count()
+
+    obama_16_bar = obama_tweet_16_count.plot(kind="bar", title="Obama tweet by week in 2016")
+    obama_16_bar.set_xlabel("Weeks")
+    obama_16_bar.set_ylabel("Amount of tweets")
+
+    obama_17_bar = obama_tweet_17_count.plot(kind="bar", title="Obama tweet by week in 2017")
+    obama_17_bar.set_xlabel("Weeks")
+    obama_17_bar.set_ylabel("Amount of tweets")
+
+    plt.show()
+    print("Question 1")
+    print("Obamas tweets per week in 2016 and 2017 can be seen in the two corresponding bar plots")
 
 def question_2():
     trump_tweet_dates = trump_tweets_df[["created_at"]]
     
     trump_tweets_16 = trump_tweet_dates.where(trump_tweet_dates["created_at"].dt.year == 2016)
     trump_tweets_17 = trump_tweet_dates.where(trump_tweet_dates["created_at"].dt.year == 2017)
-    trump_tweet_16_count = trump_tweets_16.groupby([trump_tweets_16["created_at"].dt.year, trump_tweets_16["created_at"].dt.week]).count()
-    trump_tweet_17_count = trump_tweets_17.groupby([trump_tweets_17["created_at"].dt.year, trump_tweets_17["created_at"].dt.week]).count()
+    trump_tweet_16_count = trump_tweets_16.groupby([trump_tweets_16["created_at"].dt.week]).count()
+    trump_tweet_17_count = trump_tweets_17.groupby([trump_tweets_17["created_at"].dt.week]).count()
     
-    print("Trump tweets per week in 2016")
-    print(trump_tweet_16_count)
-    print("Trump tweets per week in 2017")
-    print(trump_tweet_17_count)
+    
+    trump_16_bar = trump_tweet_16_count.plot(kind="bar", title="Trump tweet by week in 2016")
+    trump_16_bar.set_xlabel("Weeks")
+    trump_16_bar.set_ylabel("Amount of tweets")
+
+    trump_17_bar = trump_tweet_17_count.plot(kind="bar", title="Trump tweet by week in 2017")
+    trump_17_bar.set_xlabel("Weeks")
+    trump_17_bar.set_ylabel("Amount of tweets")
+    
+    plt.show()
+    print("Question 2")
+    print("Trump tweets per week in 2016 and 2017 can be seen in the two corresponding bar plots")
 
 def question_3():
-    print(count_containging(['yes we can', 'make america great again'], [obama_tweets_df.text, trump_tweets_df.text]))
+    slogan_count = count_containging(['yes we can', 'make america great again'], [obama_tweets_df.text, trump_tweets_df.text])
+    plt.bar(['yes we can (Obama)', 'make america great again (Trump)'],slogan_count)
+    plt.ylabel("Amount of tweets")
+    plt.xlabel("Tweet subject")
+    plt.show()
+    print("Question 3")
+    print("Obama wrote 'yes we can' 1 time in the data set")
+    print("Trump wrote 'make america great again!' 62 times in the data set")
+
 
 def question_4():
-    print(count_containging(['Iran','Iran'], [obama_tweets_df.text, trump_tweets_df.text]))
+    iran_count = count_containging(['Iran','Iran'], [obama_tweets_df.text, trump_tweets_df.text])
+    plt.bar(['Iran (Obama)','Iran (Trump)'], iran_count)
+    plt.ylabel("Amount of tweets")
+    plt.xlabel("Tweet subject")
+    plt.show()
+    print("Question 4")
+    print("Obama wrote 'Iran' 61 time in the data set")
+    print("Trump wrote 'Iran' 20 times in the data set")
 
 def question_5():
-    print(count_containging(['Obamacare','Obamacare'], [obama_tweets_df.text, trump_tweets_df.text]))
+    obamacare_count = count_containging(['Obamacare','Obamacare'], [obama_tweets_df.text, trump_tweets_df.text])
+    plt.bar(['Obamacare (Obama)','Obamacare (Trump)'], obamacare_count)
+    plt.ylabel("Amount of tweets")
+    plt.xlabel("Tweet subject")
+    plt.show()
+    print("Question 5")
+    print("Obama wrote 'Obamacare' 111 time in the data set")
+    print("Trump wrote 'Obamacare' 109 times in the data set")
 
 def count_containging(substrings, arrays):
     counts = []
@@ -68,9 +105,9 @@ def substring_count_in_array(substring, array):
             count += 1
     return count
 
-
 question_1()
 question_2()
 question_3()
 question_4()
 question_5()
+

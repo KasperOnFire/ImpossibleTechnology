@@ -27,15 +27,27 @@ Or by opening the run file in your chosen environment and running the file.
 
 #### Question 1
 
-![Question 1](img/Question_1.png)
+![2016](img/q1_2016.png)
+
+![2017](img/q1_2017.png)
 
 #### Question 2
 
-![Question 2](img/Question_2.png)
+![2016](img/q2_2016.png)
+
+![2017](img/q2_2017.png)
+
+#### Question 3
+
+![Question 4](img/q3.png)
 
 #### Question 4
 
-![Question 4](img/Question_4.png)
+![Question 4](img/q4.png)
+
+#### Question 5
+
+![Question 5](img/q5.png)
 
 ### Questions
 

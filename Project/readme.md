@@ -6,3 +6,6 @@
 ### Project idea
 
 We want to create a program that can recognize audio, and match it up against a database of music, to find matches using audio fingerprints.
+
+
+http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/

@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 import youtube_dl
 import sys
+import os
+
+seperator  = os
 
 link = sys.argv[1]
 
@@ -16,6 +19,8 @@ ydl_opts = {
         'preferredquality': '192',
     }],
     'progress_hooks': [my_hook],
+    'noplaylist': True,
+    'outtmpl': os.path.join('mp3', %(title)s.%(ext)s), #TODO Name parsing
 }
 
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:

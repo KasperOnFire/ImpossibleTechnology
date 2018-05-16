@@ -5,12 +5,16 @@
 
 ### Project idea
 
-We want to create a program that can recognize audio, and match it up against a database of music, to find matches using audio fingerprints.
+We want to create some tools that wrap around audio recognizing with dejavu.
 
-We want to combine audio fingerprinting with spectograms.
+- A web endpoint to use for the endpoint
+
+We will make the changes to the dejavu project that makes it more efficient - Change timed searches to confidence level based searches
 
 
-https://github.com/bokeh/bokeh/tree/master/examples/app
+### Resources
 
 
-http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/
+[Dejavu audio fingerprinting](https://github.com/worldveil/dejavu)
+
+[Article abous dejavu](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)

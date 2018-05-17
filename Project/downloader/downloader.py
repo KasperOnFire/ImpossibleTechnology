@@ -3,8 +3,6 @@ import youtube_dl
 import sys
 import os
 
-seperator  = os
-
 link = sys.argv[1]
 
 def my_hook(d):

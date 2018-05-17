@@ -18,7 +18,7 @@ ydl_opts = {
     }],
     'progress_hooks': [my_hook],
     'noplaylist': True,
-    'outtmpl': os.path.join('mp3', %(title)s.%(ext)s), #TODO Name parsing
+    'outtmpl': os.path.join('mp3', '%(title)s.%(ext)s') #TODO Name parsing
 }
 
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:

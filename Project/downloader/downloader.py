@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 import youtube_dl
 import sys
 import os
+import glob
 
 link = sys.argv[1]
 
@@ -30,6 +31,9 @@ ydl_opts = {
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
     ydl.download([link])
 
-# rename files in mp3 folder according to dajvu file names
-for filename in os.listdir("mp3"):
-    os.replace(os.path.join("mp3", filename), os.path.join("mp3", parse_title(filename)))
+#find latest file
+list_of_files = glob.glob(os.path.join('mp3', '*'))
+latest_file = max(list_of_files, key=os.path.getctime)
+
+# rename folder according to dejavu file names
+os.replace(latest_file, parse_title(latest_file))

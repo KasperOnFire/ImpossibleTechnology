@@ -30,6 +30,6 @@ ydl_opts = {
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
     ydl.download([link])
 
-# rename files in mp3 folder according to dajvu file names
+# rename files in mp3 folder according to dejavu file names
 for filename in os.listdir("mp3"):
     os.replace(os.path.join("mp3", filename), os.path.join("mp3", parse_title(filename)))

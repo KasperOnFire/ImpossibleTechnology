@@ -24,7 +24,7 @@ ydl_opts = {
         'preferredquality': '192',
     }],
     'noplaylist': True,
-    'outtmpl': os.path.join('mp3', '%(title)s.%(ext)s') #TODO Name parsing
+    'outtmpl': os.path.join('mp3', '%(title)s.%(ext)s')
 }
 
 #Download the file with the given options

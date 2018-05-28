@@ -87,7 +87,6 @@ def fingerprint(channel_samples, Fs=DEFAULT_FS,
 
 	# return hashes
 	return generate_hashes(local_maxima, fan_value=fan_value)
---recognize file
 
 def get_2D_peaks(arr2D, plot=False, amp_min=DEFAULT_AMP_MIN):
 	# http://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.morphology.iterate_structure.html#scipy.ndimage.morphology.iterate_structure

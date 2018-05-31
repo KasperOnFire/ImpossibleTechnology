@@ -1,18 +1,30 @@
 from pyqtgraph.Qt import QtGui, QtCore
-#import dejavu
+from dejavu.recognize import FileRecognizer
+from dejavu import Dejavu
+import youtube
 import os
+import sys
 import time
 import numpy as np
 import pyqtgraph as pg
 import pyaudio
 import wave
 import threading
+import json
 
 
+with open("dejavu.cnf.SAMPLE") as f:
+    config = json.load(f)
+
+confidence = 0
+song = {}
+
+REQUIRED_CONFIDENCE = 100
 RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "voice.wav"
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
+DEFAULT_CONFIG_FILE = "dejavu.cnf.SAMPLE"
 
 app = QtGui.QApplication([])
 
@@ -33,9 +45,17 @@ sound_plot.setYRange(-2**15-10000, 2**15+10000, padding=None, update=True)
 
 frames = []
 
+def findSong():
+    global confidence, song
+    djv = Dejavu(config)
+    song_internal = djv.recognize(FileRecognizer, "voice.wav")
+    print(song_internal)
+    #youtube.song(song_internal['song_name']) #Gived 503 for some reason
+    confidence = song_internal['confidence']
+    song = song_internal
+
 def save():
-    global frames
-    print("Writing!")
+    global frames 
     wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
     wf.setnchannels(2)
     wf.setsampwidth(p.get_sample_size(FORMAT))
@@ -48,15 +68,24 @@ def update():
     start = time.time()
     if time.time() - start_time > 10:
         save()
-        timer.stop()
-        app.closeAllWindows()
-        os.system("python3 dejavu.py --recognize file voice.wav") 
+        #timer.stop()
+        #app.closeAllWindows()
+        if confidence < REQUIRED_CONFIDENCE:
+            t = threading.Thread(target=findSong, args=())
+            t.start()
+        start_time = time.time()
+        if confidence > REQUIRED_CONFIDENCE:
+            timer.stop()
+            app.closeAllWindows()
+            print("Pretty sure the song is the following!")
+            print("'" + song['song_name'] + "' with a confidence of " + str(confidence))
+            sys.exit(0)
     data = stream.read(CHUNK)
     frames.append(data)
     dataVis = np.fromstring(data, dtype=np.int16)
     curve.setData(dataVis)
     end = time.time()
-    print(end - start)
+    #print(end - start)
 
 start_time = time.time()
 timer = QtCore.QTimer()

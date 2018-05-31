@@ -61,7 +61,6 @@ if __name__ == '__main__':
         # print "Using default config file: %s" % (config_file)
 
     djv = init(config_file)
-    print(config_file)
     if args.fingerprint:
         # Fingerprint all files in a directory
         if len(args.fingerprint) == 2:
@@ -89,6 +88,5 @@ if __name__ == '__main__':
         elif source == 'file':
             song = djv.recognize(FileRecognizer, opt_arg)
         print(song)
-        os.system("python3 youtube.py -v '" + song['song_name'] +"'") 
 
     sys.exit(0)

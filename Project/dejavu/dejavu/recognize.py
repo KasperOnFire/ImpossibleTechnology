@@ -14,7 +14,7 @@ class BaseRecognizer():
 		matches = []
 		for d in data:
 			matches.extend(self.dejavu.find_matches(d, Fs=self.Fs))
-		print(matches) #DET HER VIL TJALFE MISBRUGE!
+		#print(matches) #DET HER VIL TJALFE MISBRUGE!
 		return self.dejavu.align_matches(matches)
 
 	def recognize(self):

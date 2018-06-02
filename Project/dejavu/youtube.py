@@ -27,8 +27,6 @@ def main(argv):
     for opt, arg in opts:
         if opt == '-v':
             song(str(arg))
-            #os.system("python3 downloader/downloader.py " + "http://www.youtube.com/watch?v=" + search_results[0])
-            # Working but out commented for now!
 
 
 if __name__ == "__main__":

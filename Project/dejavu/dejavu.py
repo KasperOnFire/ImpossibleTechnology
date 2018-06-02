@@ -15,6 +15,7 @@ warnings.filterwarnings("ignore")
 
 DEFAULT_CONFIG_FILE = "dejavu.cnf.SAMPLE"
 
+
 def init(configpath):
     """ 
     Load config from a JSON file
@@ -34,21 +35,30 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="Dejavu: Audio Fingerprinting library",
         formatter_class=RawTextHelpFormatter)
-    parser.add_argument('-c', '--config', nargs='?',
-                        help='Path to configuration file\n'
-                             'Usages: \n'
-                             '--config /path/to/config-file\n')
-    parser.add_argument('-f', '--fingerprint', nargs='*',
-                        help='Fingerprint files in a directory\n'
-                             'Usages: \n'
-                             '--fingerprint /path/to/directory extension\n'
-                             '--fingerprint /path/to/directory')
-    parser.add_argument('-r', '--recognize', nargs=2,
-                        help='Recognize what is '
-                             'playing through the microphone\n'
-                             'Usage: \n'
-                             '--recognize mic number_of_seconds \n'
-                             '--recognize file path/to/file \n')
+    parser.add_argument(
+        '-c',
+        '--config',
+        nargs='?',
+        help='Path to configuration file\n'
+        'Usages: \n'
+        '--config /path/to/config-file\n')
+    parser.add_argument(
+        '-f',
+        '--fingerprint',
+        nargs='*',
+        help='Fingerprint files in a directory\n'
+        'Usages: \n'
+        '--fingerprint /path/to/directory extension\n'
+        '--fingerprint /path/to/directory')
+    parser.add_argument(
+        '-r',
+        '--recognize',
+        nargs=2,
+        help='Recognize what is '
+        'playing through the microphone\n'
+        'Usage: \n'
+        '--recognize mic number_of_seconds \n'
+        '--recognize file path/to/file \n')
     args = parser.parse_args()
 
     if not args.fingerprint and not args.recognize:
@@ -66,14 +76,16 @@ if __name__ == '__main__':
         if len(args.fingerprint) == 2:
             directory = args.fingerprint[0]
             extension = args.fingerprint[1]
-            print("Fingerprinting all .%s files in the %s directory"
-                  % (extension, directory))
+            print("Fingerprinting all .%s files in the %s directory" %
+                  (extension, directory))
             djv.fingerprint_directory(directory, ["." + extension], 4)
 
         elif len(args.fingerprint) == 1:
             filepath = args.fingerprint[0]
             if os.path.isdir(filepath):
-                print("Please specify an extension if you'd like to fingerprint a directory!")
+                print(
+                    "Please specify an extension if you'd like to fingerprint a directory!"
+                )
                 sys.exit(1)
             djv.fingerprint_file(filepath)
 

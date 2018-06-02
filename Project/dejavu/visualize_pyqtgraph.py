@@ -50,7 +50,6 @@ def findSong():
     djv = Dejavu(config)
     song_internal = djv.recognize(FileRecognizer, "voice.wav")
     print(song_internal)
-    #youtube.song(song_internal['song_name']) #Gived 503 for some reason
     confidence = song_internal['confidence']
     song = song_internal
 
@@ -65,7 +64,6 @@ def save():
     
 def update():
     global curve, CHUNK, frames, start_time, app
-    start = time.time()
     if time.time() - start_time > 10:
         save()
         #timer.stop()
@@ -79,13 +77,12 @@ def update():
             app.closeAllWindows()
             print("Pretty sure the song is the following!")
             print("'" + song['song_name'] + "' with a confidence of " + str(confidence))
+            youtube.song(song['song_name'])
             sys.exit(0)
     data = stream.read(CHUNK)
     frames.append(data)
     dataVis = np.fromstring(data, dtype=np.int16)
     curve.setData(dataVis)
-    end = time.time()
-    #print(end - start)
 
 start_time = time.time()
 timer = QtCore.QTimer()
